@@ -37,4 +37,4 @@ private void Arrest_Click(object sender, EventArgs e)
 
 Renaming the button after you made the `_Click` method will not rename said method. Instead you need to "refactor" the method yourself. Visual Studio has a refactoring shortcut mapped to `Ctrl+R, Ctrl+R
 
-![](Assets\Handling%20Events\refactoring.png)
+![refactor](Assets/Handling%20Events/refactoring.png)
