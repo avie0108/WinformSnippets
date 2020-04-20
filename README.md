@@ -12,6 +12,6 @@ If you find any errors, please create [a new Issue](https://github.com/avie0108/
 
 If you want new topics to be added to this repos, please create [a new Issue](https://github.com/avie0108/WinformSnippets/issues/new) in github.
 
-## Microsoft's Better tutorials
+## Microsoft's better tutorials
 
 [you can find them here](https://docs.microsoft.com/en-us/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
