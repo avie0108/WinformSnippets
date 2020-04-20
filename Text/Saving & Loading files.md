@@ -144,11 +144,35 @@ namespace Example {
 
 After executing the above code, the file `data.txt` will have been created. The first three lines of this file will contain the output of `RetrieveData1()`, `RetrieveData2()`, and `RetrieveData3()` respectively.
 
-## Loading files with an Open File Dialog
+## Saving and Loading files with a File Dialog (Windows Forms Only)
 
+So far, all we've done is read and write files by hard-coding the file paths into our application. But what if we want the user to tell us what to load and where to save?
 
+In a normal console application, allowing the user to specify a file location is trivial. We can simply use [Console.ReadLine](https://docs.microsoft.com/en-us/dotnet/api/system.console.readline?view=netframework-4.8) to ask the user for a file path. But in a Windows Forms application, we have no console, and having the user enter a file path in a textbox just doesn't look good from a design perspective.
 
-## Saving files with a Save File Dialog
+Fortunately, Windows Forms allows us to use Windows' file dialogs. We can use these dialogs to create a user-friendly way to ask users which file they want to load or where they want something to be saved. Controlling those dialogs is done through the [SaveFileDialog](https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/savefiledialog-component-windows-forms) and [OpenFileDialog](https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/openfiledialog-component-windows-forms) components.
+
+### Using the dialogs
+
+To setup the OpenFileDialog and SaveFileDialog components, follow these steps;
+
+1. In Visual Studio, open your project and select the form in which the user will be asked to open a file.
+2. In the Toolbox (View > Toolbox), click on "Dialogs", then double-click on either  OpenFileDialog or SaveFileDialog (depending on which you need) to add the component to this form.
+3. The dialog will appear at the bottom of the designer. It's recommended that you change the `Name` property to make it easier to identify within your code. For the rest of this section we will use `Dialog1`
+4. Within your code, you can now use the following snippet to open the dialog;
+
+```cs
+DialogResult = Dialog1.ShowDialog();
+
+// We only want to continue if the user pressed on the OK button.
+if(result != DialogResult.OK) {
+	return;
+}
+```
+
+5. After the user has selected a file to open or selected a location to save to and pressed OK, the selected filename will be contained with the `FileName` property of the dialog object.
+
+After obtaining the path of the target file, you can load or save it as you normally would (see above)
 
 ## Additional notes
 
